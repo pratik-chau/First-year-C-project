@@ -35,30 +35,19 @@ void sort_students() {
 }
 
 float calculate_gpa(float marks[]) {
-    float total_grade_points = 0;
-    for (int i = 0; i < MAX_SUBJECTS; i++) {
-        float percentage = (marks[i] / 100.0) * 100; // Assuming each subject is out of 100 marks
-        float grade_point;
-        if (percentage >= 90)
-            grade_point = 4.0;
-        else if (percentage >= 80)
-            grade_point = 3.6;
-        else if (percentage >= 70)
-            grade_point = 3.2;
-        else if (percentage >= 60)
-            grade_point = 2.8;
-        else if (percentage >= 50)
-            grade_point = 2.4;
-        else if (percentage >= 40)
-            grade_point = 2.0;
-        else if (percentage >= 35)
-            grade_point = 1.6;
-        else
-            grade_point = 0.0; // Not Graded
-        total_grade_points += grade_point;
+    float total = 0;
+    for(int i=0; i<MAX_SUBJECTS; i++) {
+        if(marks[i]<24) {return (0);
+            exit;
+        }
     }
-    return total_grade_points / MAX_SUBJECTS;
-}
+    for(int i=0; i<MAX_SUBJECTS; i++) {
+                for (int i = 0; i < MAX_SUBJECTS; i++) {
+                    total += marks[i];
+                    return (total /90);
+                }
+                }
+            }
 
 void rank_students() {
     for (int i = 0; i < student_count - 1; i++) {
@@ -145,6 +134,20 @@ int main() {
             case 1:
                 add_student();
                 break;
-            case
-::contentReference[oaicite:1]{index=1}
- 
+            case 2:
+                display_students();
+                break;
+            case 3:
+                rank_students();
+                display_students();
+                break;
+            case 4:
+                printf("Exiting...\n");
+                break;
+            default:
+                printf("Invalid choice!\n");
+        }
+    } while (choice != 4);
+
+    return 0;
+}
