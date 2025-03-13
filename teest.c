@@ -37,17 +37,16 @@ void sort_students() {
 float calculate_gpa(float marks[]) {
     float total = 0;
     for(int i=0; i<MAX_SUBJECTS; i++) {
-        if(marks[i]<24) {return (0);
-            exit;
+        if(marks[i]<24){
+            return (total=0);
+            exit(0);
         }
     }
-    for(int i=0; i<MAX_SUBJECTS; i++) {
-                for (int i = 0; i < MAX_SUBJECTS; i++) {
-                    total += marks[i];
-                    return (total /90);
-                }
-                }
-            }
+        for (int i = 0; i < MAX_SUBJECTS; i++) {
+            total += marks[i];
+        }
+        return (total /90);
+    }
 
 void rank_students() {
     for (int i = 0; i < student_count - 1; i++) {
